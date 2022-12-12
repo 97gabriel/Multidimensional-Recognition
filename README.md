@@ -10,4 +10,4 @@
 >>> pip install -r requirements.txt
 
 4. Run "main.py"
->>> python main.py
+>>> (env) python main.py
