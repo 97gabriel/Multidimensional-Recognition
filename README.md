@@ -6,7 +6,7 @@
 2. Activate the enveroment
 >>> source /env/bin/activate
 
-3. Install the requirement.txt
+3. Install the requirements.txt
 >>> pip install -r requirements.txt
 
 4. Run "main.py"
