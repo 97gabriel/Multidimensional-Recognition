@@ -36,12 +36,16 @@ def encode(data_path):
           data.append(known_name + numpy.array(known_face).tolist())
   except NotADirectoryError:
     pass
-  appendData()
+#   appendData()
   
 def appendData():
-  with open("DB/representations_vgg_face_MANUAL.pkl", "wb") as f:
-    pickle.dump(data, f)
-
+#   with open("DB/representations_vgg_face_MANUAL.pkl", "wb") as f:
+#     pickle.dump(data, f)
+  try:
+    DeepFace.find(img_path="", db_path=db, model_name=MODEL, distance_metric=DISTANCE,
+                          detector_backend=DETECTOR, enforce_detection="True")
+  except ValueError:
+    pass
 
 
 def detector(img_path):
