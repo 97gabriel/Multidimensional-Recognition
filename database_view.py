@@ -298,12 +298,13 @@ class Ui_databaseView(object):
                         "}")
 
     def trainData(self):
-        from face import encode
-        if os.path.exists("DB/representations_vgg_face_MANUAL.pkl"):
-            os.remove("DB/representations_vgg_face_MANUAL.pkl")
+        from face import encode, appendData
+#         if os.path.exists("DB/representations_vgg_face_MANUAL.pkl"):
+#             os.remove("DB/representations_vgg_face_MANUAL.pkl")
         if os.path.exists("DB/representations_vgg_face.pkl"):
             os.remove("DB/representations_vgg_face.pkl")
-        encode("DB")    # Specify only the directory name
+#         encode("DB")    # Specify only the directory name
+        appendData()
 
 
 
