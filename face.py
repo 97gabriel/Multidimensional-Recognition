@@ -11,6 +11,7 @@ data = []
 db = "DB/"
 DETECTOR = "dlib" #['opencv', 'ssd', 'dlib', 'mtcnn']
 MODEL = "VGG-Face" #["VGG-Face", "Facenet", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib"] 
+DISTANCE = "euclidean"
 
 G = "\33[92m";R = "\33[91m"
 Y = "\33[93m";A = "\33[90m"
@@ -66,7 +67,7 @@ def detector(img_path):
       # draw box over face
       frame = cv2.rectangle(img,(x,y), (x+w,y+h), (0,0,255), 2)
       # frame = img[y:y+h, x:x+w]
-      obj = DeepFace.find( img_path=frame, db_path=db, model_name=MODEL, distance_metric="euclidean",
+      obj = DeepFace.find( img_path=frame, db_path=db, model_name=MODEL, distance_metric=DISTANCE,
                           detector_backend=DETECTOR, enforce_detection="True")
       # print(obj)
       f_name = str(obj[["identity", "VGG-Face_euclidean"]].head().max()).split('/')[-2:][0]
